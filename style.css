@@ -1,0 +1,61 @@
+/*body {
+  color: #222222;
+  font-size: 1em;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;*/
+}
+.masthead {
+background-color: #fff;
+position: fixed;
+height: 50px;
+width: auto;
+border-bottom: 1px solid #DDD;
+z-index: 9999;
+}
+.masthead > h1 {
+	text-align: center;
+	font-family: 'Roboto', "Open Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 2em;
+	color: red;
+}
+.question-wrapper {
+	background-image: url('../quiz-app/images/ecuador-main.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	height: 45.938rem;
+	overflow: auto;
+}
+.question-container {
+	width: 400px;
+	height: 200px;
+	margin: 30px auto 0;
+	font-family: sans-serif;
+	color: rgba(131, 92, 15, 0.69);
+	font-size: 25px;
+	padding: 100px 20px 0px;
+	background-color: rgba(240, 255, 255, 0.55);
+}
+.footer {
+	height: 200px;
+	width: auto;
+}
+.container {
+    margin: 5px 0px;
+    height: 250px;
+    width: 32%;
+    float: left;    
+}
+.container:nth-child(2) {
+	margin-right: 2%;
+	margin-left: 2%
+}
+.container img {
+    height: 200px;
+    width: 100%;
+}
+
+//almost nothing over rides inline styles, id's also have alot of value
+//order matters - if they have the same weight, the last one listed will win
+
