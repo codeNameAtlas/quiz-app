@@ -32,9 +32,57 @@ $( document ).ready(function() {
     ]
     //console.log(questions[0].question);
     //called first question in first object property to test var questions
+    //global variables
+
+    var currentQuestion = 0;
+    var correctGuesses = 0;
+
+    $('.question').on("click", "#submit", function(){
+    	evaluateAnswer();
+    	currentQuestion ++;
+    	nextQuestion();
+    	var newQuestion = '<span class="question">' + questions[currentQuestion].question + '</span><br><div id="answer-holder"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].answers[0] + '</span><br><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].answers[1] + '</span><br><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].answers[2] + '</span><br><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].answers[3] + '</span><br></div><div id="button-holder"><input type="button" id="submit" value="Submit Answer"></div>';
+    	$('.question').html(newQuestion);
+    })
+
+    function evaluateAnswer() {
+    	//var userGuess = $('input[type="radio"][value="questions[currentQuestions].correct"]').prop("checked", true);
+    	var userGuess = $('input[type="radio"]: checked').val();
+    	if ( questions[currentQuestion].correct === userGuess) {
+    		//correctGuesses += 1;
+    		correctGuess ++;
+    	}
+    }
+
     
+    function nextQuestion() {
+    	if (currentQuestion < 4) {
+    		//$('.question').remove();
+    		$('#answer-holder input').remove();
+    		$('#answer-holder span').remove();
+    		$('#answer-holder').remove();
+    		var newQuestion = '<span class="question">' + questions[currentQuestion].question + '</span><br><div id="answer-holder"><input type="radio" name="option" class="option" value="0"><span class="answer">' + questions[currentQuestion].answers[0] + '</span><br><input type="radio" name="option" class="option" value="1"><span class="answer">' + questions[currentQuestion].answers[1] + '</span><br><input type="radio" name="option" class="option" value="2"><span class="answer">' + questions[currentQuestion].answers[2] + '</span><br><input type="radio" name="option" class="option" value="3"><span class="answer">' + questions[currentQuestion].answers[3] + '</span><br></div><div id="button-holder"><input type="button" id="submit" value="Submit Answer"></div>';
+    		$('.question').html(newQuestion);
+    	}
+    	else {
+    		var finalResult = '<span class="final">Congratulations you guessed ' + correctGuesses + 'question correct!</span>'
+    		$('#answer-holder').html(finalResult);
+    	}
+
+    }
 
 
 
+    /*function runQuiz() {
+    	$('question').text(questions[i].question)
+    }
 
+    runQuiz(); */
 });
+
+//set current question and number correct
+//start with on.click
+//
+//
+//
+//
